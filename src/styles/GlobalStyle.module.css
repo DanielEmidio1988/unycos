@@ -1,0 +1,36 @@
+@import url('./variables.module.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family); 
+}
+
+ul {
+    list-style: none;
+}
+
+h1,h2,h3{
+    text-transform: var(--text-transform);
+}
+
+section{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+@media screen and (min-device-width: 500px) {
+
+    section{
+        width: 80%;   
+    }
+}
+
+@media screen and (max-device-width: 500px){
+
+    section{
+        width: 96%;
+    }
+
+}

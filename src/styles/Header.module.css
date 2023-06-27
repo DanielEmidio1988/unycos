@@ -1,0 +1,79 @@
+@import url('./variables.module.css');
+
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 6vh;
+    background-color: var(--primary-color);
+    box-shadow: 4px 1px 8px var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo_area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.menu_area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--secondary-color);
+}
+
+@media screen and (min-device-width: 800px){
+
+    .logo_area{
+        width: 70%;
+    }
+
+    .menu_area{
+        width: 30%;
+    }
+
+    .menu_area img{
+        display: none;
+    }
+
+    .menu_close{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8vh;
+    }
+
+}
+
+@media screen and (min-device-width: 500px) and (max-device-width:800px) {
+
+    .menu-area img{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-device-width: 500px) {
+
+    .logo_area{
+        width: 90%;
+    }
+
+    .menu_area{
+        width: 10%;
+    }
+
+    .menu_open{
+
+    }
+
+    .menu_close{
+        display: none;
+    }
+    
+}
