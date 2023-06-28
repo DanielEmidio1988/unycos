@@ -4,6 +4,7 @@ import PresentationPage from "../components/homepage/PresentationPage"
 import FormatCourse from "../components/homepage/FormatCourse"
 import SliderEntrenarExito from '../components/homepage/SliderEntrenarExito'
 import ContenidoExclusivo from '../components/homepage/ContenidoExclusivo'
+import SectionsInfos from '../components/homepage/SectionInfos'
 
 function HomePage(){
     return(
@@ -18,6 +19,7 @@ function HomePage(){
                 </div>
                 <SliderEntrenarExito/>
                 <ContenidoExclusivo/>
+                <SectionsInfos/>
 
 
             </main>

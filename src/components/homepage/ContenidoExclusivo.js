@@ -3,6 +3,7 @@ import ebookicon from '../../assets/icons/book-outline.svg'
 import video360icon from '../../assets/icons/360.svg'
 import testsicon from '../../assets/icons/tests.svg'
 import tasksicon from '../../assets/icons/tasks.svg'
+import staricon from '../../assets/utils/Vector.svg'
 
 
 function ContenidoExclusivo(){
@@ -33,18 +34,18 @@ function ContenidoExclusivo(){
 
             <div className={styles.contenido_exclusivothirdbox}>
                 <h2>Destaques Del Curso</h2>
-                <div><p><span>03</span> Bases biomecánicas de la Natación <span></span></p></div>
-                <div><p><span>06</span> Bases biomecánicas de la Natación <span></span></p></div>
-                <div><p><span>08</span> Bases biomecánicas de la Natación <span></span></p></div>
-                <div><p><span>11</span> Bases biomecánicas de la Natación <span></span></p></div>
+                <div className={styles.contenido_exclusivothirdboxdestaques}><span>03</span><p>Bases biomecánicas de la Natación </p><span>&gt;</span></div>
+                <div className={styles.contenido_exclusivothirdboxdestaques}><span>06</span><p> Bases biomecánicas de la Natación </p><span>&gt;</span></div>
+                <div className={styles.contenido_exclusivothirdboxdestaques}><span>08</span><p> Bases biomecánicas de la Natación </p><span>&gt;</span></div>
+                <div className={styles.contenido_exclusivothirdboxdestaques}><span>11</span><p> Bases biomecánicas de la Natación </p><span>&gt;</span></div>
                 <button>Ver Programa Completo</button>
-                <div>
-                    {/* <img src={} alt='Icon Star'/> */}
+                <div className={styles.contenido_exclusivothirdboxcalificacion}>
+                    <img src={staricon} alt='Icon Star'/>
                     <h3>Los Estudiantes Le Dan a Unycos Una Calificación Promedio de 4.7 de 5 Estrellas.</h3>
-                    <p>100% de garantia de satisfacción. 30 dias de garantia de devolución de dinero.</p>
                 </div>
+                <p>100% de garantia de satisfacción. 30 dias de garantia de devolución de dinero.</p>
             </div>
-
+            
 
         </section>
     )
