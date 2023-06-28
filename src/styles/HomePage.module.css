@@ -49,6 +49,50 @@
     border-radius: 4px;
     border: none;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.format_courses button:hover{
+    opacity: 0.7;
+}
+
+.sliderentrenarexito{
+    display: flex;
+    margin: 4vh 0 4vh 0;
+}
+
+.sliderentrenarfirstboxinfotraining{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    margin-bottom: 4vh;
+}
+
+.sliderentrenarfirstboxinfotraining h2{
+    font-weight: 400;
+}
+
+.sliderentrenarfirstboxinfotraining p{
+    color: #858479;
+}
+
+.sliderentrenarsecondboxinfotraining{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+.contenido_exclusivo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4vh 0 4vh 0;
+}
+
+.contenido_exclusivofirstbox{
+    display: flex;
 }
 
 @media screen and (min-device-width: 800px){
@@ -107,6 +151,111 @@
     .button_mobile{
         display: none;
     }
+
+    .sliderentrenarexito{
+        background-color: #fff;
+        border-radius: 4px;  
+    }
+
+    .sliderentrenarboxinstructor{
+        width: 50%;
+    }
+
+    .sliderentrenarboxinstructor img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .sliderentrenarboxinfotraining{
+        width: 50%;
+        padding: 4vh;
+    }
+
+    .sliderentrenarfirstboxinfotraining{
+        justify-content: flex-start;
+    }
+
+
+    .sliderentrenarfirstboxinfotraining h2{
+        color: var(--primary-color);
+        font-size: 2.4rem;
+    }
+
+    .sliderentrenarfirstboxinfotraining p{
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin-right: 4vw;
+    }
+
+    .sliderentrenarsecondboxinfotraining div{
+        opacity: 0.4;
+        transition: .3s;
+        cursor: pointer;
+    }
+
+    .sliderentrenarsecondboxinfotraining div:hover{
+        width: max(10vw,148px);
+        opacity: 1;
+    }
+
+    .sliderentrenarsecondboxinfotraining div img{
+        width: max(10vw,148px);
+    }
+
+    .sliderentrenarsecondboxinfotraining div h3{
+       color: var(--primary-color);
+    }
+
+    .contenido_exclusivo h1{
+        font-size: 2.5rem;
+        font-weight: 400;
+        margin-bottom: 4vh;
+    }
+    
+    .contenido_exclusivofirstbox{
+        display: flex;
+        gap: 4vw;  
+        margin-bottom: 4vh;
+    }
+
+    .contenido_exclusivofirstbox div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+    }
+
+    .contenido_exclusivofirstbox div img{
+        width: max(4vw, 72px);
+    }
+
+    .contenido_exclusivofirstbox div p{
+        font-weight: 400;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+    }
+
+    .contenido_exclusivosecondbox button{
+        width: max(26vw, 200px);
+        height: max(6vh, 60px);
+        font-size: 1.5rem;
+        background-color: var(--tertiary-color);
+        color: var(--secondary-color);
+        border-radius: 4px;
+        border: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: .3s;
+    }
+    
+    .contenido_exclusivosecondbox button:hover{
+        opacity: 0.7;
+    }
+
+    .contenido_exclusivothirdbox{
+        display: none;
+    }
+
 }
 
 @media screen and (min-device-width: 500px) and (max-device-width:800px) {
@@ -216,6 +365,43 @@
         text-transform: uppercase;
     }
 
+    .sliderentrenarexito{
+        flex-direction: column;
+        margin: 8vh 0 4vh 0;
+    }
 
+    .sliderentrenarboxinstructor{
+        display: none;
+    }
+
+    .sliderentrenarfirstboxinfotraining{
+        text-align: center;
+    }
+
+    .sliderentrenarfirstboxinfotraining h2{
+        font-size: 1.4rem;
+    }
+
+    .sliderentrenarfirstboxinfotraining p{
+        font-size: 1.2rem;
+    }
+
+    .contenido_exclusivo h1{
+        display: none;
+    }
+
+    .contenido_exclusivofirstbox{
+        gap: 8vw;
+        text-align: center;
+    }
+
+    .contenido_exclusivofirstbox div img{
+        width: 60px;
+        
+    }
+
+    .contenido_exclusivosecondbox{
+        display: none;
+    }
     
 }
