@@ -29,7 +29,7 @@ function ContenidoExclusivo(){
                 </div>
             </div>
             <div className={styles.contenido_exclusivosecondbox}>
-                <button>Mas Información</button>
+                <button className={styles.button_gold}>Mas Información</button>
             </div>
 
             <div className={styles.contenido_exclusivothirdbox}>
@@ -38,15 +38,13 @@ function ContenidoExclusivo(){
                 <div className={styles.contenido_exclusivothirdboxdestaques}><span>06</span><p> Bases biomecánicas de la Natación </p><span>&gt;</span></div>
                 <div className={styles.contenido_exclusivothirdboxdestaques}><span>08</span><p> Bases biomecánicas de la Natación </p><span>&gt;</span></div>
                 <div className={styles.contenido_exclusivothirdboxdestaques}><span>11</span><p> Bases biomecánicas de la Natación </p><span>&gt;</span></div>
-                <button>Ver Programa Completo</button>
+                <button className={styles.button_dark}>Ver Programa Completo</button>
                 <div className={styles.contenido_exclusivothirdboxcalificacion}>
                     <img src={staricon} alt='Icon Star'/>
                     <h3>Los Estudiantes Le Dan a Unycos Una Calificación Promedio de 4.7 de 5 Estrellas.</h3>
                 </div>
                 <p>100% de garantia de satisfacción. 30 dias de garantia de devolución de dinero.</p>
             </div>
-            
-
         </section>
     )
 }

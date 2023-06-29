@@ -20,7 +20,6 @@
     color: var(--tertiary-color);
 }
 
-/*  */
 @media screen and (min-device-width: 500px){
 
 }
@@ -35,6 +34,7 @@
         width: 100%;
         z-index: 2;
         display: flex;
+        overflow: auto;
     }
 
     .modal_menuConectado > div:first-child{
@@ -54,15 +54,13 @@
     .modal_menuConectado > div:last-child > h1{
         color: #858479;
         border-bottom: 1px solid #858479;
-        /* display: none; */
         padding: 0 2vw 6vh 0;
         margin-right: 2vw;
     }
 
     .modal_menuConectado > div:last-child > h1 > span{
         margin-bottom: 4vh;
-        color: var(--primary-color);
-        
+        color: var(--primary-color);    
     }
 
     .modal_menuConectado > div:last-child > p{
@@ -74,7 +72,5 @@
         border-top: 1px solid #858479;
         padding-top: 2vh;
     }
-
-    /* color: #858479; */
     
 }

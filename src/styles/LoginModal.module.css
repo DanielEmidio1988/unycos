@@ -1,0 +1,12 @@
+@import url('./variables.module.css');
+
+.login_container{
+    position: fixed;
+    top: 20vh;
+    left: 40vw;
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 4px;
+    z-index: 2;
+}

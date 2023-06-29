@@ -1,12 +1,40 @@
 @import url('./variables.module.css');
 
 .container{
+    overflow: hidden;
+}
+
+.main_container{
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     background-color: var(--primary-color);
+}
+
+button{
+    height: min(8vh, 40px);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .3s;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+.button_gold{    
+    background-color: var(--tertiary-color);
+    border: none;
+}
+
+.button_dark{
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    letter-spacing: 2px;
 }
 
 .menu_overlay{
@@ -31,12 +59,10 @@
 }
 
 .presentation h1{
-    font-weight: 400;
     letter-spacing: 2px;
 }
 
 .presentation h2{
-    font-weight: 400;
     color: #999;
     letter-spacing: 2px;
 }
@@ -57,15 +83,7 @@
 .format_courses button{
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
-    border-radius: 4px;
     border: none;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.format_courses button:hover{
-    opacity: 0.7;
 }
 
 .sliderentrenarexito{
@@ -78,10 +96,6 @@
     flex-direction: column;
     gap: 2vh;
     margin-bottom: 4vh;
-}
-
-.sliderentrenarfirstboxinfotraining h2{
-    font-weight: 400;
 }
 
 .sliderentrenarfirstboxinfotraining p{
@@ -152,13 +166,6 @@
     color: #D8D7CE;
     
 }
-
-/* .sectionsinfos_form_secondbox input[type='checkbox'] {
-    border-radius: 4px;
-    height: 2vh;
-    border: 4px solid red;
-  } */
-
   
 .sectionsinfos_form_secondbox > label {
     color: #858479;
@@ -169,19 +176,7 @@
 }
 
 .sectionsinfos_masinfo > form > button {
-    height: max(6vh,52px);
-    background-color: var(--tertiary-color);
-    color: var(--secondary-color);
-    border-radius: 4px;
-    border: none;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: .3s;
     margin: 2vh 0;
-}
-
-.sectionsinfos_masinfo > form > button:hover{
-    opacity: 0.7;
 }
 
 .sectionsinfos_masinfo > article > h3, .sectionsinfos_masinfo > article > h2 {
@@ -220,18 +215,10 @@
 }
 
 .articulos_relacionados > button{
-    height: 5vh;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    text-transform: uppercase;
-    border-radius: 4px;
-    border: 2px solid var(--secondary-color);
     margin: 2vh 0;
 }
 
-
-
-@media screen and (min-device-width: 800px){
+@media screen and (min-device-width: 500px){
     .presentation{
         height: 80vh;
         background-image: url(../assets/img/Hero.svg);
@@ -267,7 +254,6 @@
 
     .format_courses h3{
         font-size: 1.5rem;
-        font-weight: 400;
     }
 
     .format_courses div img {
@@ -275,8 +261,9 @@
     }
 
     .format_courses button{
-        width: max(26vw, 200px);
-        height: max(8vh, 60px);
+        height: 8vh;
+        width: 26vw;
+        min-width: 200px;
         font-size: 1.5rem;
     }
 
@@ -311,7 +298,6 @@
         justify-content: flex-start;
     }
 
-
     .sliderentrenarfirstboxinfotraining h2{
         color: var(--primary-color);
         font-size: 2.4rem;
@@ -344,7 +330,6 @@
 
     .contenido_exclusivo h1{
         font-size: 2.5rem;
-        font-weight: 400;
         margin-bottom: 4vh;
     }
     
@@ -372,20 +357,10 @@
     }
 
     .contenido_exclusivosecondbox button{
-        width: max(26vw, 200px);
-        height: max(6vh, 60px);
+        height: 8vh;
+        width: 26vw;
+        min-width: 200px; 
         font-size: 1.5rem;
-        background-color: var(--tertiary-color);
-        color: var(--secondary-color);
-        border-radius: 4px;
-        border: none;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: .3s;
-    }
-    
-    .contenido_exclusivosecondbox button:hover{
-        opacity: 0.7;
     }
 
     .contenido_exclusivothirdbox{
@@ -406,7 +381,6 @@
         text-align: center;
         margin: 4vh 0;
         font-size: 2.5rem;
-        font-weight: 400;
     }
 
     .sectionsinfos_boxlessonplan article{
@@ -428,16 +402,13 @@
 
     .sectionsinfos_boxlessonplan article div h1{
         font-size: 3rem;
-        font-weight: 400;
         color: #858479;
     }
 
     .sectionsinfos_boxlessonplan article div div h2{
         color: var(--primary-color);
         font-size: 2.5rem;
-        font-weight: 400;
         margin-bottom: 2vh;
-    
     }
 
     .sectionsinfos_boxlessonplan article div div p{
@@ -447,17 +418,13 @@
     }
 
     .sectionsinfos_boxlessonplan article button{ 
-        width: max(16vw, 180px);
-        height: max(6vh, 40px);
-        font-size: 1.2rem;
-        background-color: transparent;
-        color: var(--primary-color);
-        border-radius: 4px;
-        border: 3px solid var(--primary-color);
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: .3s;
+        width: min(16vw, 180px);
+        font-size: 1rem;
+        font-weight: 600;
         margin-bottom: 4vh;
+        color: var(--primary-color);
+        border: 3px solid var(--primary-color);
+        background-color: transparent;
     }
 
     .sectionsinfos_infoscursos {
@@ -499,7 +466,7 @@
     }
     
     .sectionsinfos_masinfo > form > button {
-        width: max(22vw, 300px);
+        width: min(22vw, 300px);
         font-size: 1.2rem;
     }
 
@@ -540,7 +507,6 @@
         align-items: center;
         justify-content: center;   
     }
-
 
     .sectionsinfos_boxcomments > div > div:first-child > h3{
         color: var(--primary-color);
@@ -596,20 +562,8 @@
     }
 
     .sectionsinfos_masinfo > article > button {
-        width: max(16vw,160px);
-        height: 4vh;
-        background-color: var(--primary-color);
-        color: var(--secondary-color);
-        border: 2px solid var(--secondary-color);
-        border-radius: 4px;
-        text-transform: uppercase;
+        width: min(16vw,160px);
     }
-
-    /* .articulos_relacionados{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    } */
     
     .articulos_relacionados h1{
         font-size: 2.5rem;
@@ -628,7 +582,7 @@
     }
 
     .articulos_relacionados > button{
-        width: max(28vw,480px);
+        width: min(28vw,480px);
         margin-bottom: 4vh;
     }
 
@@ -657,49 +611,14 @@
     }
 
     .boxblog button{
-        height: 6vh;
-        width: max(28vw,480px);
-        background-color: transparent;
-        border-radius: 4px;
-        border: 2px solid var(--secondary-color);
-        color: var(--secondary-color);
+        width: min(28vw,480px);
         font-size: 1.2rem;
-        text-transform: uppercase;
-
     }
     
     .boxunetelacomunidad{
         display: none;
     }
 
-}
-
-@media screen and (min-device-width: 500px) and (max-device-width:800px) {
-    .presentation{
-        height: 80vh;
-        background-image: url(../assets/img/Hero.svg);
-    }
-
-    .presentation h1{
-        font-size: 3rem;
-    }
-    
-    .presentation h2{
-        font-size: 2.5rem;
-    }
-    
-    .presentation h2 span{
-        font-size: 2.5rem;
-    }
-
-    .common_questions{
-        display: none;
-    }
-
-    .button_mobile{
-        display: none;
-    }
-    
 }
 
 @media screen and (max-device-width: 500px) {
@@ -710,18 +629,15 @@
     }
 
     .presentation h1{
-        font-weight: 400;
         font-size: 2rem;
     }
     
     .presentation h2{
-        font-weight: 400;
         color: #999;
         font-size: 1.5rem;
     }
     
     .presentation h2 span{
-        font-weight: 400;
         color: #666;
         font-size: 1.5rem;
     }
@@ -745,7 +661,6 @@
 
     .format_courses button{
         width: 100%;
-        height: 8vh;
         font-size: 1rem;
     }
 
@@ -764,19 +679,9 @@
         font-weight: 400;
     }
 
-    .common_questions h2{
-        font-weight: 400;
-    }
-
     .common_questions button{
         width: 100%;
-        height: 8vh;
-        border-radius: 4px;
-        border: 2px solid var(--secondary-color);
-        background-color: var(--primary-color);
-        color: var(--secondary-color);
         font-size: 1rem;
-        text-transform: uppercase;
     }
 
     .sliderentrenarexito{
@@ -810,8 +715,7 @@
     }
 
     .contenido_exclusivofirstbox div img{
-        width: 60px;
-        
+        width: 60px;     
     }
 
     .contenido_exclusivosecondbox{
@@ -821,7 +725,6 @@
     .contenido_exclusivothirdbox h2{
         margin: 4vh 0;
         text-align: center;
-        font-weight: 400;
         font-size: 1.5rem;
     }
 
@@ -844,23 +747,15 @@
 
     .contenido_exclusivothirdbox button{
         width: 100%;
-        height: 8vh;
-        border-radius: 4px;
-        border: 2px solid var(--secondary-color);
-        background-color: var(--primary-color);
-        color: var(--secondary-color);
         font-size: 1rem;
-        text-transform: uppercase;
     }
 
     .contenido_exclusivothirdboxcalificacion{
         margin-top: 4vh;
         gap: 4vw;
-
     }
 
     .contenido_exclusivothirdboxcalificacion h3{
-        font-weight: 400;
         font-size: 1rem;
     }
 
@@ -956,7 +851,6 @@
 
     .sectionsinfos_boxcomments > div > div:last-child > h3 > span{
         display: none;
-
     }
 
     .sectionsinfos_boxcomments > div > div:last-child > p:nth-child(2){
@@ -967,16 +861,8 @@
         display: none;
     }
 
-    /* .sectionsinfos_form_secondbox {
-        
-        display: grid;
-       
-        border: 1px solid red;
-    } */
-
     .articulos_relacionados > button{
         width: 90%;
-        height: 7vh;
     }
 
     .boxblog{
@@ -1010,15 +896,7 @@
     }
 
     .boxunetelacomunidad > button {
-        height: 7vh;
         width:  min(80%,240px);
-        color: var(--secondary-color);
-        background-color: transparent;
-        border: 2px solid var(--secondary-color);
-        border-radius: 4px;
-        margin-bottom: 4vh;
-        letter-spacing: 2px;
-
     }
 
     .boxunetelacomunidad > button > img {

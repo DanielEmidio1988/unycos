@@ -31,12 +31,8 @@ function SliderEntrenarExito(){
                     <div>
                         <img src={img3} alt='Image Instructor'/>
                     </div>
-                </div>
-
-                
+                </div>              
             </div>
-
-
         </section>
     )
 }

@@ -1,30 +1,33 @@
 import styles from '../../styles/HomePage.module.css'
+import { useContext } from 'react'
+import { GlobalContext } from '../../context/GlobalContext'
 
 function ArticulosRelacionados(){
+    const context = useContext(GlobalContext)
+
     return(
         <section className={styles.articulos_relacionados}>
 
             <h1>Artículos Relacionados</h1>
             <div>
-                <div>
-                    <h3>Consejos para Nadadores Principiantes</h3>
-                    <p>22.06.2019</p>
-                </div>
-                <div>
-                    <h3>Recomendaciones para lograr que un niño venza el miedo al agua</h3>
-                    <p>22.06.2019</p>
-                </div>
-                <div>
-                    <h3>¿Nadar es un buen método para adelgazar?</h3>
-                    <p>22.06.2019</p>
-                </div>
-                <div>
-                    <h3>Consejos para mejorar la técnica del estilo crol</h3>
-                    <p>22.06.2019</p>
-                </div>
+                {context.dataArticulos.length > 0 ?
+                    context.dataArticulos.map((articulo)=>{
+                        return(
+                            <div>
+                            <h3>{articulo.title}</h3>
+                            <p>{articulo.date}</p>
+                        </div>
+                        )
+                    })
+                :
+                    <div>
+                        <h3>No data available</h3>
+                        <p>xx.xx.xxxx</p>
+                    </div>
+                }
             </div>
 
-            <button>Leer Más en Nuestro Blog</button>
+            <button className={styles.button_dark}>Leer Más en Nuestro Blog</button>
         </section>
     )
 }

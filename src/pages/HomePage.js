@@ -1,6 +1,7 @@
 import styles from '../styles/HomePage.module.css'
 import Header from "../components/header/Header"
 import MenuConectado from '../components/modal/MenuConectado'
+import LoginModal from '../components/modal/LoginModal'
 import { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalContext'
 import PresentationPage from "../components/homepage/PresentationPage"
@@ -19,20 +20,9 @@ import whatsappicon from '../assets/icons/whatsapp.svg'
 function HomePage(){
     const context = useContext(GlobalContext)
 
-        // return{
-    //     dataUser, 
-    //     setDataUser,
-    //     loading, 
-    //     setLoading,
-    //     showModal, 
-    //     setShowModal,
-    //     typeModal, 
-    //     setTypeModal,
-    // }
-
     return(
-        <body>
-            <MenuConectado/>
+        <div className={context.showModal ? styles.container : ''}>
+            
             {context.showModal && context.typeModal === 'menu_conectado' ?
             <>
                 <MenuConectado/>
@@ -40,14 +30,22 @@ function HomePage(){
             </>
             :
             ''}
+
+            {context.showModal && context.typeModal === 'login_user' ?
+            <>
+                <LoginModal/>
+                <div className={styles.menu_overlay}></div>
+            </>
+            :
+            ''}
             
             <Header/>
-            <main className={styles.container}>
+            <main className={styles.main_container}>
                 <PresentationPage/>
                 <FormatCourse/>
                 <div className={styles.common_questions}>
                     <h2>Aprende natación con una campeona olímpica</h2>
-                    <button>Preguntas Frecuentes</button>
+                    <button className={styles.button_gold}>Preguntas Frecuentes</button>
                 </div>
                 <SliderEntrenarExito/>
                 <ContenidoExclusivo/>
@@ -56,7 +54,7 @@ function HomePage(){
                 <div className={styles.boxblog}>
                     <h1>Aprende con los Mejores</h1>
                     <h3>Detrás de cada éxito, hay una história.<br/> Conoce En Nuestro Blog</h3>
-                    <button>Leer Más en Nuestro Blog</button>                    
+                    <button className={styles.button_dark}>Leer Más en Nuestro Blog</button>                    
                 </div>
                 <div className={styles.boxunetelacomunidad}>
                     <h1>
@@ -69,12 +67,12 @@ function HomePage(){
                         <img src={logoYoutube} alt='logo Unycos Youtube'/>
                     </div>
                     <h3>¿Dudas? Contáctanos por whatsapp</h3>
-                    <button><img src={whatsappicon} alt='Icone Whatsapp'/>+34 653 46 73 60</button>
+                    <button className={styles.button_dark}><img src={whatsappicon} alt='Icone Whatsapp'/>+34 653 46 73 60</button>
 
                 </div>
             </main>
             <Footer/>
-        </body>
+        </div>
     )
 }
 

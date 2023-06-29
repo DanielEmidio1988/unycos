@@ -4,7 +4,7 @@ function PresentationPage(){
     return(
         <section className={styles.presentation}>
 
-            <h1>MIREIA BELMONTE</h1>
+            <h1 className='teste'>MIREIA BELMONTE</h1>
             <h2><span>ENSEÑA</span> NATACIÓN</h2>
         </section>
     )

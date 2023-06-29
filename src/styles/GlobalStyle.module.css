@@ -38,4 +38,8 @@ section{
         width: 96%;
     }
 
+    .modal-open{
+        overflow: hidden;
+    }
+
 }

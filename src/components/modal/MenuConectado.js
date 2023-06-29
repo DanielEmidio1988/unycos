@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { GlobalContext } from '../../context/GlobalContext'
 import styles from '../../styles/MenuConectado.module.css'
 import logoUnycos from '../../assets/utils/Logo Unycos Dark.svg'

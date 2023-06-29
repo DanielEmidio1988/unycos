@@ -14,6 +14,24 @@ function Header(){
         context.setShowModal(menu)
         let typemenu = context.showModal ? '' : 'menu_conectado'
         context.setTypeModal(typemenu)
+        // if(!context.showModal){
+        //     document.body.classList.add('modal-open')
+        // }else{
+        //     document.body.classList.remove('modal-open')
+        // }
+        return
+    }
+
+    function LoginUser(){
+        const menu = !context.showModal
+        context.setShowModal(menu)
+        let typemenu = context.showModal ? '' : 'login_user'
+        context.setTypeModal(typemenu)
+        // if(!context.showModal){
+        //     document.body.classList.add('modal-open')
+        // }else{
+        //     document.body.classList.remove('modal-open')
+        // }
         return
     }
 
@@ -45,7 +63,7 @@ function Header(){
                         :
                         <>
                             <li>REGISTER</li>
-                            <li>LOG IN</li>
+                            <li onClick={()=>LoginUser()}>LOG IN</li>
                         </>
                     }
 
