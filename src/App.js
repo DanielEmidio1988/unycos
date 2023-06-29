@@ -1,12 +1,17 @@
 import './styles/GlobalStyle.module.css'
 import Router from './router/Router';
-import Header from './components/header/Header';
+import { GlobalContext } from './context/GlobalContext';
+import GlobalState from './context/GlobalState';
 
 function App() {
+
+  const context = GlobalState()
+
   return (
     <>
-    <Router/>
-    {/* <Header/> */} 
+    <GlobalContext.Provider value={context}>
+      <Router/>
+    </GlobalContext.Provider>
     </>
   );
 }

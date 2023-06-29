@@ -1,0 +1,125 @@
+@import url('./variables.module.css');
+
+.footer{
+    width: 100%;
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer_area2 > div:last-child{
+    color: #858479;
+}
+
+.footer_area2 > div:last-child > a{
+    color: #858479;
+}
+
+.footer_area3{
+    color: var(--secondary-color);
+}
+
+@media screen and (min-device-width: 500px){
+    .footer{
+        height: 20vh;
+    }
+
+    .footer > div{
+        display: flex;
+    }
+
+    .footer_area1{
+        grid-row: 1/ span 2;
+        grid-column: 1/1;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    .footer_area1 img{
+        width: 120px;
+        height: 30px;
+        margin: 0 0 2vh 2vw;
+    }
+
+    .footer_area2{
+        grid-row: 1/ span 2;
+        grid-column: 2/3;
+        flex-direction: column;
+        justify-content: space-between;
+    } 
+
+    .footer_area2 > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    .footer_area2 > div:first-child{
+        border-bottom: 1px solid #858479;
+        padding: 6vh 0 3vh 0;
+    }
+
+    .footer_area2 > div:last-child{
+        margin-bottom: 4vh;
+    }
+
+    .footer_area2 > div:last-child > a{
+        margin-top: 1vh;
+    }
+
+    .footer_area2 > div img {
+        width: 30px;
+    }
+    
+    .footer_area3{
+        grid-row: 1/ span 2;
+        grid-column: 3/3;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 0 2vw 2vh 0;
+        gap: 1vw;
+    }
+}
+
+@media screen and (max-device-width: 500px){
+
+    .footer{
+        padding-top: 6vh;
+    }
+
+    .footer_area1{
+        grid-row: 1/1;
+        grid-column: 1/1;
+        margin-left: 2vw;
+    }
+
+    .footer_area2{
+        grid-row: 2/2;
+        grid-column: 1/ span 3;
+        text-align: center;   
+    }
+
+    .footer_area2 > div:first-child{
+        display: none;
+    }
+
+    .footer_area2 > div:last-child{
+        margin-top: 2vh;
+    }
+
+    .footer_area2 > div:last-child > a{
+        margin: 0 2vw;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+    }
+
+    .footer_area3{
+        grid-row: 1/1;
+        grid-column: 3/3;
+        display: flex;
+        gap: 2vw;
+    }
+
+}

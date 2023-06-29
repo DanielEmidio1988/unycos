@@ -75,11 +75,23 @@ function SectionsInfos(){
             <div className={styles.sectionsinfos_infoscursos}>
                 <h2>Más Cursos</h2>
                 <div>
+
                     <img src={imagecurso3} alt='Marcus Cooper Piraguismo'/>
                     <img src={imagecurso1} alt='Ismael Cala Desarrollo Personal'/>
                     <img src={imagecurso2} alt='Lewis Amarante Maquillaje'/>
-                    {/* <img src={imagecurso5} alt='Marcus Cooper Piraguismo'/>
-                    <img src={imagecurso4} alt='Lewis Amarante Maquillaje'/> */}
+                    {/* {window.innerWidth > 500 ?
+                        <>
+                            <img src={imagecurso3} alt='Marcus Cooper Piraguismo'/>
+                            <img src={imagecurso1} alt='Ismael Cala Desarrollo Personal'/>
+                            <img src={imagecurso2} alt='Lewis Amarante Maquillaje'/>
+                        </>
+                    :
+                        <>
+                            <img src={imagecurso5} alt='Marcus Cooper Piraguismo'/>
+                            <img src={imagecurso4} alt='Lewis Amarante Maquillaje'/>
+                        </>
+                    } */}
+       
                 </div>
 
             </div>

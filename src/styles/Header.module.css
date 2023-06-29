@@ -27,7 +27,13 @@
     color: var(--secondary-color);
 }
 
+
+
 @media screen and (min-device-width: 800px){
+
+    .header{
+        z-index: 2;
+    }
 
     .logo_area{
         width: 70%;
@@ -46,6 +52,10 @@
         justify-content: center;
         align-items: center;
         gap: 8vh;
+    }
+
+    .menu_area > ul > li {
+        cursor: pointer;
     }
 
 }
