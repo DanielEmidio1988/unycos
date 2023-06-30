@@ -11,12 +11,12 @@ function ArticulosRelacionados(){
             <h1>Artículos Relacionados</h1>
             <div>
                 {context.dataArticulos.length > 0 ?
-                    context.dataArticulos.map((articulo)=>{
+                    context.dataArticulos.map((articulo,index)=>{
                         return(
-                            <div>
-                            <h3>{articulo.title}</h3>
-                            <p>{articulo.date}</p>
-                        </div>
+                            <div key={index}>
+                                <h3>{articulo.title}</h3>
+                                <p>{articulo.date}</p>
+                            </div>
                         )
                     })
                 :

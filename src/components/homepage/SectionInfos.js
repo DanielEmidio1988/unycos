@@ -57,9 +57,9 @@ function SectionsInfos(){
                 <div>
                     {context.dataCourse.length > 0 ?
 
-                    context.dataCourse.map((course)=>{
+                    context.dataCourse.map((course, index)=>{
                         return(
-                            <img src={course.photo} alt='Photo Course'/>
+                            <img key={index} src={course.photo} alt='Photo Course'/>
                         )
                     })
                     :
@@ -91,9 +91,9 @@ function SectionsInfos(){
                     <h3><img src={thumbupgoldicon} alt='thumbup icon'/><span>98.7% de valoraciones positivas</span> / total de 726 valoraciones</h3>
                     <div className={styles.sectionsinfos_boxcomments}>
                         {context.dataCommentsEstudiantes.length > 0 ?                   
-                        context.dataCommentsEstudiantes.map((comment)=>{
+                        context.dataCommentsEstudiantes.map((comment, index)=>{
                             return(
-                                <div>
+                                <div key={index}>
                                     <div>      
                                             {comment.photo ?
                                             <img src={comment.photo} alt='Photo User'/>
@@ -104,12 +104,11 @@ function SectionsInfos(){
                                             }                                      
                                     </div>
                                     <div>
-                                        
-                                        <p ><img src={checkmarkicon} alt='check icon'/> <span>Mireia Belmonte</span> • Profesor  <span> - hace 3 meses</span></p>
+                                                 
                                         {comment.reply.author ? 
                                             <p className={styles.data_info_unycos_team}>
                                                 <span>
-                                                    {comment.reply.author === comment.reply.title ?
+                                                    {comment.reply.author !== comment.reply.title ?
                                                      comment.reply.author 
                                                      : 
                                                      ''
@@ -123,8 +122,8 @@ function SectionsInfos(){
                                             : 
                                             ''
                                             }
-                                        {comment.reply.content ? <p>{comment.reply.conten}</p> : ''}
-                                        <p>{comment.content}</p>
+                                        {comment.reply.content ? <p className={styles.sectionsinfos_boxcomments_reply_comment}>{comment.reply.content}</p> : ''}
+                                        <p className={styles.sectionsinfos_boxcomments_comment}>{comment.content}</p>
                                         <h3>{comment.username} <span><img src={thumbupgrayicon} alt='thumbup icon'/> HACE {comment.date}</span></h3>
                                     </div>
                                 </div>

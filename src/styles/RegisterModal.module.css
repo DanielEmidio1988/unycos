@@ -1,11 +1,11 @@
 @import url('./variables.module.css');
 
-.login_container{
+.register_container{
     position: fixed;
     top: 20vh;
     left: 40vw;
     width: 400px;
-    height: 440px;
+    height: 360px;
     background-color: #fff;
     border-radius: 4px;
     z-index: 2;
@@ -14,19 +14,13 @@
     padding: 0 1vw;
 }
 
-.login_container h3{
-    text-align: right;
-    margin: 20px 0 0 0;
-    cursor: pointer;
-}
-
-.login_container h1{
+.register_container h1{
     text-align: center;
     margin: 2vh 0;
     font-weight: 600;
 }
 
-.login_container input{
+.register_container input{
     height: min(4vh,40px);
     margin: 8px 0;
     padding-left: 1vw;
@@ -36,23 +30,22 @@
     font-size: 1rem;
 }
 
-.login_container input:focus{
+.register_container input:focus{
     border-bottom: 3px solid var(--quaternary-color);
     outline: none;
 }
 
-.button_gold{    
-    width: 100%;
-    background-color: var(--tertiary-color);
-    border: none;
-    font-size: 1rem;
+.register_container > div {
+    display: flex;
+    justify-content: space-evenly;
     margin: 2vh 0;
 }
 
-.link_reset_password{
-    margin: 20px 0;
-    cursor: pointer;
-    color: var(--primary-color);
+.button_gold{   
+    width: 40%; 
+    background-color: var(--tertiary-color);
+    border: none;
+    font-size: 1rem;
 }
 
 .error_message{
@@ -62,22 +55,11 @@
 }
 
 .input_error_message{
-    box-shadow: 2px 2px 1px var(--error-color-primary);
-}
-
-p{
-    text-align: center;
-    color: var(--quaternary-color);
-}
-
-p > span{
-    color: var(--primary-color);
-    font-weight: 600;
-    cursor: pointer;
+    border: 1px solid var(--error-color-primary);
 }
 
 @media screen and (max-device-width: 500px){
-    .login_container{
+    .register_container{
         top: 0vh;
         left: 0vw;
         width: 100%;

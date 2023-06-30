@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { URL_UNYCOS } from "../constants/ApiLinks";
 import photouseranamilena from '../assets/utils/photouseranamilenagomez.svg'
 import imagecurso1 from '../assets/img/ismaelcurso.svg'
 import imagecurso2 from '../assets/img/lewiscurso.svg'
 import imagecurso3 from '../assets/img/marcuscoopercurso.svg'
 import imagecurso4 from '../assets/img/lewiscursosmobile.svg'
 import imagecurso5 from '../assets/img/marcuscoopercursomobile.svg'
-
 
 function GlobalState(){
     const [dataUser, setDataUser] = useState('')
@@ -87,6 +87,27 @@ function GlobalState(){
         {title: 'Consejos para mejorar la técnica del estilo crol',
         date: '22.06.2019'}
     ]
+    const [dataApi, setDataApi] = useState('')
+
+    useEffect(()=>{
+        const browserDataApi = async ()=> {
+            setLoading(true)
+            try {
+                const response = await axios.get(URL_UNYCOS, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-mejor-key' : 'unycos'
+                    }
+                })
+                setDataApi(response.data.spotlights)  
+                console.log(response.data.spotlights)
+            } catch (error) {
+                console.log(error)         
+            }
+             setLoading(false)
+        }
+        browserDataApi()
+    },[])
 
     return{
         dataUser, 
@@ -100,7 +121,8 @@ function GlobalState(){
         dataLessonPlan,
         dataCommentsEstudiantes,
         dataCourse,
-        dataArticulos
+        dataArticulos,
+        dataApi
     }
 }
 

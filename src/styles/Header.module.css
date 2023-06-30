@@ -28,8 +28,7 @@
 }
 
 
-
-@media screen and (min-device-width: 800px){
+@media screen and (min-device-width: 500px){
 
     .header{
         z-index: 2;
@@ -58,14 +57,11 @@
         cursor: pointer;
     }
 
-}
-
-@media screen and (min-device-width: 500px) and (max-device-width:800px) {
-
-    .menu-area img{
-        display: none;
+    .menu_area > ul > li:hover{
+        color: var(--tertiary-color);
+        font-weight: 600;
     }
-    
+
 }
 
 @media screen and (max-device-width: 500px) {
@@ -79,7 +75,19 @@
     }
 
     .menu_open{
+        width: 40vw;
+        position: fixed;
+        top: 7vw;
+        right: 0;
+        background-color: var(--secondary-color);
+        border-radius: 0 0 4px 4px;
+        text-align: center;
+    }
 
+    .menu_open > li{
+        color: var(--primary-color);
+        font-weight: 600;
+        margin: 2vh 0;
     }
 
     .menu_close{

@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import { GlobalContext } from '../../context/GlobalContext'
 import styles from '../../styles/LoginModal.module.css'
-import logoUnycos from '../../assets/utils/Logo Unycos Dark.svg'
 
 function LoginModal(){
     const context = useContext(GlobalContext)
@@ -39,7 +38,10 @@ function LoginModal(){
     }
 
     function registerUser(){
+        const updateTypeModal = 'registro'
+        context.setTypeModal(updateTypeModal)
 
+        return
     }
 
     return(
@@ -47,16 +49,16 @@ function LoginModal(){
             <h3 onClick={()=>closeLogin()}>X</h3>
 
             <h1>Login</h1>
-            <input type='text' placeholder='USERNAME' value={login} onChange={(event)=>setLogin(event.target.value)}/>
-            {errorLogin && !login ? <p>¡Usuario desinformado!</p> : ''}
-            <input type='password' placeholder='CONTRASEÑA' value={password} onChange={(event)=>setPassword(event.target.value)}/>
-            {errorLogin && !login ? <p>¡Contraseña no informada!</p> : ''}
+            <input type='text' className={errorLogin && !login ? styles.input_error_message : ''} placeholder='USUARIO' value={login} onChange={(event)=>setLogin(event.target.value)}/>
+            {errorLogin && !login ? <p className={styles.error_message}>¡Usuario desinformado!</p> : ''}
+            <input type='password' className={errorLogin && !password ? styles.input_error_message : ''} placeholder='CONTRASEÑA' value={password} onChange={(event)=>setPassword(event.target.value)}/>
+            {errorLogin && !password ? <p className={styles.error_message}>¡Contraseña no informada!</p> : ''}
             
-            <button onClick={()=>sucessLogin()}>Login</button>
+            <button onClick={()=>sucessLogin()} className={styles.button_gold}>Login</button>
 
-            {errorLogin ? <p>¡Usuario o contraseña invalido!</p> : ''}
+            {errorLogin ? <p className={styles.error_message}>¡Usuario o contraseña invalido!</p> : ''}
 
-            <p>¿olvido la contraseña?</p>
+            <p className={styles.link_reset_password}>¿olvido la contraseña?</p>
 
             <p>¿No tienes una cuenta? <span onClick={()=>registerUser()}>registro</span></p>
 

@@ -9,6 +9,16 @@ import iconWhatsapp from '../../assets/icons/whatsapp.svg'
 function MenuConectado(){
     const context = useContext(GlobalContext)
 
+    function cerrarSection(){
+        const updateTypeModal = ''
+        const updateShowModal = false
+        const updateDataUser = ''
+        context.setDataUser(updateDataUser)
+        context.setShowModal(updateShowModal)
+        context.setTypeModal(updateTypeModal)
+        return
+    }
+
     return(
         <>
             <div className={styles.modal_menuConectado}>
@@ -25,8 +35,8 @@ function MenuConectado(){
                     <p>Ajustes</p>
                     <p>Todos Los Cursos</p>
                     <span>Contáctanos or Whatsapp</span>
-                    <p><img src={iconWhatsapp} alt='icon whatsapp'/>+34 653 46 73 60</p>
-                    <p>Cerrar Sesión</p>
+                    <p className={styles.option_mobile}><img src={iconWhatsapp} alt='icon whatsapp'/>+34 653 46 73 60</p>
+                    <p onClick={()=>cerrarSection()}>Cerrar Sesión</p>
                 </div>
 
             </div>

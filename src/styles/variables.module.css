@@ -2,6 +2,8 @@
     --primary-color: #000;
     --secondary-color: #fff;
     --tertiary-color: #C5AF19;
+    --quaternary-color: #858479;
+    --error-color-primary: #ED1C24;
     --font-family: 'Lato', sans-serif;
     --text-transform: uppercase;
 }

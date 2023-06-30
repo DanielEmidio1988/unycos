@@ -6,11 +6,6 @@
 
 }
 
-.modal_menuConectado > div:last-child{
-    /* background-color: var(--secondary-color); */
-
-}
-
 .modal_menuConectado > div:last-child > p{
     color: #858479;
     cursor: pointer;
@@ -21,6 +16,40 @@
 }
 
 @media screen and (min-device-width: 500px){
+
+    .modal_menuConectado{
+        position: fixed;
+        top: 6vh;
+        right: 8vw;
+        z-index: 2;
+        width: 240px;
+        border-radius: 0 0 4px 4px;
+        padding-right: 1.5vw;
+    }
+
+    .modal_menuConectado > div:first-child{
+        display: none;
+    }
+
+    .modal_menuConectado > div > img, 
+        .modal_menuConectado > div > h1, 
+            .modal_menuConectado > div > span{
+        display: none;
+    }
+
+    .modal_menuConectado > div > p {
+        margin: 2vh 0;
+        text-align: right;
+        font-weight: 600;
+    }
+
+    .option_mobile{
+        display: none;
+    }
+
+    .menu_conectado{
+        display: none;
+    }
 
 }
 

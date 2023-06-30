@@ -1,0 +1,1 @@
+export const URL_UNYCOS = 'https://api.beta.unycos.com/u/courses/spotlights/natacion'

@@ -2,11 +2,12 @@ import styles from '../styles/HomePage.module.css'
 import Header from "../components/header/Header"
 import MenuConectado from '../components/modal/MenuConectado'
 import LoginModal from '../components/modal/LoginModal'
+import RegisterModal from '../components/modal/RegisterModal'
 import { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalContext'
 import PresentationPage from "../components/homepage/PresentationPage"
 import FormatCourse from "../components/homepage/FormatCourse"
-import SliderEntrenarExito from '../components/homepage/SliderEntrenarExito'
+import SliderCentral from '../components/homepage/SliderCentral'
 import ContenidoExclusivo from '../components/homepage/ContenidoExclusivo'
 import SectionsInfos from '../components/homepage/SectionInfos'
 import ArticulosRelacionados from '../components/homepage/ArticulosRelacionados'
@@ -38,6 +39,14 @@ function HomePage(){
             </>
             :
             ''}
+
+            {context.showModal && context.typeModal === 'registro' ?
+            <>
+                <RegisterModal/>
+                <div className={styles.menu_overlay}></div>
+            </>
+            :
+            ''}
             
             <Header/>
             <main className={styles.main_container}>
@@ -47,7 +56,7 @@ function HomePage(){
                     <h2>Aprende natación con una campeona olímpica</h2>
                     <button className={styles.button_gold}>Preguntas Frecuentes</button>
                 </div>
-                <SliderEntrenarExito/>
+                <SliderCentral/>
                 <ContenidoExclusivo/>
                 <SectionsInfos/>
                 <ArticulosRelacionados/>

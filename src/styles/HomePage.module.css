@@ -13,19 +13,6 @@
     background-color: var(--primary-color);
 }
 
-button{
-    height: min(8vh, 40px);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: .3s;
-    text-transform: uppercase;
-    color: var(--secondary-color);
-}
-
-button:hover{
-    opacity: 0.7;
-}
-
 .button_gold{    
     background-color: var(--tertiary-color);
     border: none;
@@ -166,6 +153,10 @@ button:hover{
     color: #D8D7CE;
     
 }
+
+/* .sectionsinfos_form_secondbox{
+    display: grid;
+} */
   
 .sectionsinfos_form_secondbox > label {
     color: #858479;
@@ -461,6 +452,31 @@ button:hover{
         justify-content: center;
     }
 
+    /* .sectionsinfos_form_secondbox{
+        grid-template-rows: 1fr 1fr 1vw 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .sectionsinfos_form_secondbox > input:first-child{
+        grid-row: 1/1;
+        grid-column: 1/1;
+    } */
+
+    /* .sectionsinfos_form_secondbox > label:first-child{
+        grid-row: 2/2;
+        grid-column: 1/1;
+    }
+
+    .sectionsinfos_form_secondbox > input:last-child{
+        grid-row: 4/4;
+        grid-column: 1/1;
+    }
+
+    .sectionsinfos_form_secondbox > label:last-child{
+        grid-row: 5/5;
+        grid-column: 1/1;
+    } */
+
     .sectionsinfos_form_firstbox > input, .sectionsinfos_form_firstbox select {
         width: max(18vw,300px);        
     }
@@ -536,11 +552,16 @@ button:hover{
 
     .sectionsinfos_boxcomments > div > div:last-child > p {
         font-size: 1.1rem;
+        text-align: left;
     }
 
-    .sectionsinfos_boxcomments > div > div:last-child > p:nth-child(2) {
-        color: #858479;
-        border-top: 1px solid #858479;
+    .sectionsinfos_boxcomments_comment{
+        color: var(--secondary-color);
+    }
+
+    .sectionsinfos_boxcomments_reply_comment {
+        color: var(--quaternary-color);
+        border-top: 1px solid var(--quaternary-color);
         margin-top: 2vh;
         padding-top: 1vh;
     }

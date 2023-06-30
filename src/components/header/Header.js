@@ -3,23 +3,25 @@ import { useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalContext'
 import logo from '../../assets/utils/Logo Unycos.png'
 import menuicon from '../../assets/icons/person-outline.svg'
+import menuonline from '../../assets/utils/bx-menu.svg'
 import styles from '../../styles/Header.module.css'
 
 function Header(){
-    // const [openMenu, setOpenMenu] = useState(false)
     const context = useContext(GlobalContext)
+    const [showMenu, setShowMenu] = useState(false)
 
-    function openMenu(){
-        const menu = !context.showModal
-        context.setShowModal(menu)
-        let typemenu = context.showModal ? '' : 'menu_conectado'
-        context.setTypeModal(typemenu)
-        // if(!context.showModal){
-        //     document.body.classList.add('modal-open')
-        // }else{
-        //     document.body.classList.remove('modal-open')
-        // }
+    function openMenuConectado(){
+        const updateMenu = !context.showModal
+        const updateTypemenu = context.showModal ? '' : 'menu_conectado'
+        context.setShowModal(updateMenu)
+        context.setTypeModal(updateTypemenu)
         return
+    }
+
+    function openMenuNoConectado(){
+        const updateMenu = !showMenu
+        setShowMenu(updateMenu)
+        console.log(updateMenu)
     }
 
     function LoginUser(){
@@ -27,24 +29,16 @@ function Header(){
         context.setShowModal(menu)
         let typemenu = context.showModal ? '' : 'login_user'
         context.setTypeModal(typemenu)
-        // if(!context.showModal){
-        //     document.body.classList.add('modal-open')
-        // }else{
-        //     document.body.classList.remove('modal-open')
-        // }
         return
     }
 
-    // return{
-    //     dataUser, 
-    //     setDataUser,
-    //     loading, 
-    //     setLoading,
-    //     showModal, 
-    //     setShowModal,
-    //     typeModal, 
-    //     setTypeModal,
-    // }
+    function registerUser(){
+        const updateTypeModal = 'registro'
+        const updateShowModal = true
+        context.setShowModal(updateShowModal)
+        context.setTypeModal(updateTypeModal)
+        return
+    }
 
     return(
         <header className={styles.header}>
@@ -52,22 +46,27 @@ function Header(){
                 <img src={logo} alt='Logo Unycos'/>
             </div>
             <nav className={styles.menu_area}>
-                <img src={menuicon} alt='Menu Unycos'/>
-                <ul className={styles.menu_close}>
+                {context.dataUser ?
+                    <img src={menuonline} onClick={()=>openMenuConectado()} className={styles.menu_conectado} alt='Menu Conectado'/>   
+                        :
+                    <img src={menuicon} onClick={()=>openMenuNoConectado()} alt='Menu Unycos'/>
+
+                }
+                
+                
+                <ul className={!showMenu ? styles.menu_close : styles.menu_open}>
                     <li>CURSOS</li>
                     {
                         context.dataUser ?
                         <>
-                            <li onClick={()=>openMenu()}>HOLA, {context.dataUser.name}</li>
+                            <li onClick={()=>openMenuConectado()}>HOLA, {context.dataUser.name}</li>
                         </>
                         :
                         <>
-                            <li>REGISTER</li>
+                            <li onClick={()=>registerUser()}>REGISTER</li>
                             <li onClick={()=>LoginUser()}>LOG IN</li>
                         </>
                     }
-
-                    {/* <li>HOLA GLAYDSTON</li> */}
                 </ul>
             </nav>
         </header>
