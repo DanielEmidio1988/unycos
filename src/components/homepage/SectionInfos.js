@@ -9,6 +9,12 @@ import checkmarkicon from '../../assets/utils/checkmark-circle-2.svg'
 function SectionsInfos(){
     const [titleCommentsArea, setTitleCommentsArea] = useState('Comentarios de los estudiantes')
     const context = useContext(GlobalContext)
+    const [visibleComments, setVisibleComments] = useState([])
+    const [totalComments, setTotalComments] = useState(3) 
+
+    // const visibleComments = context.dataCommentsEstudiantes
+    // .filter((comment,index)=> index < totalComments)
+    
 
     useEffect(()=>{
         const updateHeaderComment = () =>{
@@ -23,6 +29,20 @@ function SectionsInfos(){
             window.removeEventListener('resize',updateHeaderComment)
         }
     },[])
+
+    function moreComments(){
+        if(totalComments <= context.dataCommentsEstudiantes.length){
+            const updateTotalComments = totalComments + 1
+            setTotalComments(updateTotalComments)
+            setVisibleComments(context.dataCommentsEstudiantes.filter((comment, index) => index < totalComments))
+        }
+        console.log('entrou')
+        return
+    }
+
+    useEffect(() => {
+        setVisibleComments(context.dataCommentsEstudiantes.filter((comment, index) => index < totalComments))
+      }, [totalComments])
 
     return(
         <section className={styles.sectionsinfos}>
@@ -91,12 +111,13 @@ function SectionsInfos(){
                     <h3><img src={thumbupgoldicon} alt='thumbup icon'/><span>98.7% de valoraciones positivas</span> / total de 726 valoraciones</h3>
                     <div className={styles.sectionsinfos_boxcomments}>
                         {context.dataCommentsEstudiantes.length > 0 ?                   
-                        context.dataCommentsEstudiantes.map((comment, index)=>{
+                        visibleComments
+                        .map((comment, index)=>{
                             return(
                                 <div key={index}>
                                     <div>      
                                             {comment.photo ?
-                                            <img src={comment.photo} alt='Photo User'/>
+                                            <img src={comment.photo} alt='Photo User' className={styles.photo_estudiantes}/>
                                             :
                                             <h3>
                                                 {comment.username.match(/\b\w/g).slice(0,2).join('')}
@@ -140,7 +161,7 @@ function SectionsInfos(){
                             </div>
                         </div>}
                     </div>
-                    <button className={styles.button_dark}>Ver Más</button>
+                    <button className={styles.button_dark} onClick={()=>moreComments()}>Ver Más</button>
 
                 </article>
             </div>

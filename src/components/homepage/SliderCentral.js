@@ -7,8 +7,6 @@ function SliderCentral(){
     const [dataCourses, setDataCourses] = useState([]) 
     const [dataMoreCourses, setDataMoreCourses] = useState([])
     const [selectedCourse, setSelectedCourse] = useState(null)
-    console.log('selectedCourse')
-    console.log(selectedCourse)
 
     useEffect(() => {
         if (context.dataApi) {

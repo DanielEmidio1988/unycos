@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { URL_UNYCOS } from "../constants/ApiLinks";
 import photouseranamilena from '../assets/utils/photouseranamilenagomez.svg'
+import photouserdanielemidio from '../assets/utils/photodanielemidio.png'
 import imagecurso1 from '../assets/img/ismaelcurso.svg'
 import imagecurso2 from '../assets/img/lewiscurso.svg'
 import imagecurso3 from '../assets/img/marcuscoopercurso.svg'
-import imagecurso4 from '../assets/img/lewiscursosmobile.svg'
-import imagecurso5 from '../assets/img/marcuscoopercursomobile.svg'
 
 function GlobalState(){
     const [dataUser, setDataUser] = useState('')
@@ -54,13 +53,46 @@ function GlobalState(){
     },{
         photo: photouseranamilena,
         username: 'Ana Milena Gómez',
-        date: '2 meses',
+        date: '3 meses',
         content: 'Profundizar en el entrenamiento y proceso de enseñanza',
         reply: {
             author: 'Mireia Belmonte',
             title: '• Profesor',
             content: 'Hola, Ana! Continúa a practicar y seguro que mejorarás más y más tu desempeño! Un abrazo!',
             date: '3 meses'
+        }
+    },{
+        photo: photouserdanielemidio,
+        username: 'Daniel Emidio',
+        date: '3 meses',
+        content: 'didática legal',
+        reply: {
+            author: 'Cristiano Silva',
+            title: '• Profesor',
+            content: 'Hola, Daniel! Ficamos muito felizes com o feedback! Grande abraço!',
+            date: '3 meses'
+        }
+    },{
+        photo: '',
+        username: 'Cassia Oliveira',
+        date: '4 meses',
+        content: 'Professores legais! Didática boa',
+        reply: {
+            author: 'Equipo Unycos',
+            title: 'Equipo Unycos',
+            content: 'Obrigado!',
+            date: '4 meses'
+        }
+    },{
+        photo: '',
+        username: 'Edgar Santos',
+        date: '4 meses',
+        content: 'comentário 1',
+        reply: {
+            author: 'Lucas Souza',
+            title: '• Profesor',
+            content: 'Obrigado!',
+            date: '4 meses'
         }
     }]
     const dataCourse = [
