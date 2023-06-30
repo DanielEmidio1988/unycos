@@ -3,7 +3,7 @@
 Esta é uma landing page desenvolvida ao Front end Challenge 20200912. Trata-se de uma página web da Unycos, que busca promover seus serviços ao público.
 
 ## 🔗Link de Acesso
-- Deploy Vercel: .
+- Deploy Vercel: [clique aqui!](https://unycos-theta.vercel.app/).
 - Layout Figma: [clique aqui!](https://www.figma.com/file/qYZ9ggj5heUxGs8XvJyOZh/Unyco-Test-Maquetaci%C3%B3n?node-id=1%3A770&mode=dev)
 
 ## 👥Equipe
