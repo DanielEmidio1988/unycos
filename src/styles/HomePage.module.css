@@ -726,6 +726,32 @@
         font-size: 1.2rem;
     }
 
+    .sliderentrenarsecondboxinfotraining{
+        width: 100%;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    .sliderentrenarsecondboxinfotraining > div{
+        /* transition: transform .5s ease-in-out;
+        transform: translateX(0); */
+    }
+
+    .sliderentrenarsecondboxinfotraining > div > img{
+        width: 200px;
+        object-fit: cover;
+
+    }
+
+    .sliderentrenarsecondboxinfotraining > div > img:target ~ .sliderentrenarsecondboxinfotraining{
+        justify-content: flex-start;
+    }
+
+    .sliderentrenarsecondboxinfotraining > div > h3{
+        font-size: 1rem;
+        text-align: center;
+    }
+
     .contenido_exclusivo h1{
         display: none;
     }
@@ -851,14 +877,18 @@
     .sectionsinfos_boxcomments{
         display: flex;
         gap: 2vw;
+        flex-wrap: wrap;
+        overflow: hidden;
+        width: 100%;
     }
 
     .sectionsinfos_boxcomments > div {
         background-color: var(--secondary-color);
         color: var(--primary-color);
         border-radius: 4px;
-        width: 90vw;
+        width: 90%;
         padding: 1vh;
+        object-fit: cover;
     }
 
     .sectionsinfos_boxcomments > div > div:first-child{
@@ -872,6 +902,10 @@
 
     .sectionsinfos_boxcomments > div > div:last-child > h3 > span{
         display: none;
+    }
+
+    .sectionsinfos_boxcomments > div > div:last-child > p{
+        text-align: left;
     }
 
     .sectionsinfos_boxcomments > div > div:last-child > p:nth-child(2){

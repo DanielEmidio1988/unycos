@@ -19,16 +19,23 @@ function MenuConectado(){
         return
     }
 
+    function closeMenu(){
+        const updateTypeModal = ''
+        const updateShowModal = false
+        context.setShowModal(updateShowModal)
+        context.setTypeModal(updateTypeModal)
+    }
+
     return(
         <>
             <div className={styles.modal_menuConectado}>
-                <div>
+                <div onClick={()=>closeMenu()}>
 
                 </div>
                 <div>
                 {/* {context.dataUser.name} */}
                     <img src={logoUnycos} alt='logo Unycos'/>
-                    <h1>Hola, <span>DANIELA</span> <span> <img src={context.dataUser.notificacion > 0 ? iconnotificacion : iconnotificacioff} alt='icon notification'/></span></h1>
+                    <h1>Hola, <span>{context.dataUser.name}</span> <span> <img src={context.dataUser.notificacion > 0 ? iconnotificacion : iconnotificacioff} alt='icon notification'/></span></h1>
                     <p>Panel de Control</p>
                     <p>Mis Cursos</p>
                     <p>Perfil</p>

@@ -12,16 +12,12 @@ function Header(){
 
     function openMenuConectado(){
         const updateMenu = !context.showModal
+        const updateShowMenu = !showMenu
         const updateTypemenu = context.showModal ? '' : 'menu_conectado'
         context.setShowModal(updateMenu)
         context.setTypeModal(updateTypemenu)
+        setShowMenu(updateShowMenu)
         return
-    }
-
-    function openMenuNoConectado(){
-        const updateMenu = !showMenu
-        setShowMenu(updateMenu)
-        console.log(updateMenu)
     }
 
     function LoginUser(){
@@ -29,6 +25,7 @@ function Header(){
         context.setShowModal(menu)
         let typemenu = context.showModal ? '' : 'login_user'
         context.setTypeModal(typemenu)
+        setShowMenu(false)
         return
     }
 
@@ -37,6 +34,7 @@ function Header(){
         const updateShowModal = true
         context.setShowModal(updateShowModal)
         context.setTypeModal(updateTypeModal)
+        setShowMenu(false)
         return
     }
 
@@ -47,9 +45,9 @@ function Header(){
             </div>
             <nav className={styles.menu_area}>
                 {context.dataUser ?
-                    <img src={menuonline} onClick={()=>openMenuConectado()} className={styles.menu_conectado} alt='Menu Conectado'/>   
+                    <img src={menuonline} onClick={()=>setShowMenu(!showMenu)} className={styles.menu_conectado} alt='Menu Conectado'/>   
                         :
-                    <img src={menuicon} onClick={()=>openMenuNoConectado()} alt='Menu Unycos'/>
+                    <img src={menuicon} onClick={()=>setShowMenu(!showMenu)} alt='Menu Unycos'/>
 
                 }
                 

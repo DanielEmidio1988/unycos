@@ -45,10 +45,10 @@ function SliderCentral(){
                         </p>
                     </div>
                     <div className={styles.sliderentrenarsecondboxinfotraining}>
-                        {dataMoreCourses.map((info)=>{
+                        {dataMoreCourses.map((info,index)=>{
                                 return(
                                     <div onClick={()=>changeSelectedCourse(info)}>
-                                        <img src={info.image} alt='Image Instructor'/>
+                                        <img src={info.image} alt={`course ${info.title}`}/>
                                         <h3>{info.title}</h3>
                                     </div>  
                                 )

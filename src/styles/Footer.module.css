@@ -9,11 +9,11 @@
 }
 
 .footer_area2 > div:last-child{
-    color: #858479;
+    color: var(--quaternary-color);
 }
 
 .footer_area2 > div:last-child > a{
-    color: #858479;
+    color: var(--quaternary-color);
 }
 
 .footer_area3{

@@ -100,7 +100,6 @@ function GlobalState(){
                     }
                 })
                 setDataApi(response.data.spotlights)  
-                console.log(response.data.spotlights)
             } catch (error) {
                 console.log(error)         
             }
