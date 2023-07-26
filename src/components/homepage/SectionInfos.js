@@ -4,17 +4,12 @@ import { GlobalContext } from '../../context/GlobalContext'
 import styles from '../../styles/HomePage.module.css'
 import thumbupgoldicon from '../../assets/icons/thumbs-up.svg'
 import thumbupgrayicon from '../../assets/icons/thumbsgray-up.svg'
-import checkmarkicon from '../../assets/utils/checkmark-circle-2.svg'
 
 function SectionsInfos(){
     const [titleCommentsArea, setTitleCommentsArea] = useState('Comentarios de los estudiantes')
     const context = useContext(GlobalContext)
     const [visibleComments, setVisibleComments] = useState([])
-    const [totalComments, setTotalComments] = useState(3) 
-
-    // const visibleComments = context.dataCommentsEstudiantes
-    // .filter((comment,index)=> index < totalComments)
-    
+    const [totalComments, setTotalComments] = useState(3)     
 
     useEffect(()=>{
         const updateHeaderComment = () =>{

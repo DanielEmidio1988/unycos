@@ -128,7 +128,8 @@ function GlobalState(){
                 const response = await axios.get(URL_UNYCOS, {
                     headers: {
                         'Content-Type': 'application/json',
-                        'x-mejor-key' : 'unycos'
+                        'x-mejor-key' : 'unycos',
+                        'Access-Control-Allow-Origin': 'https://unycos-theta.vercel.app'
                     }
                 })
                 setDataApi(response.data.spotlights)  
