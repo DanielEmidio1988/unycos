@@ -124,8 +124,9 @@ function GlobalState(){
     useEffect(()=>{
         const browserDataApi = async ()=> {
             setLoading(true)
+            const url = 'https://corsproxy.io/?' + encodeURIComponent(URL_UNYCOS)
             try {
-                const response = await axios.get(URL_UNYCOS, {
+                const response = await axios.get(url, {
                     headers: {
                         'Content-Type': 'application/json',
                         'x-mejor-key' : 'unycos',
